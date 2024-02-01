@@ -12,7 +12,21 @@ public class code3 {
             arr[i]=sc.nextInt();
         }
         // reversing the array
-        for(int i=n-1;i>=0;i--){
+        // for(int i=n-1;i>=0;i--){
+        //     System.out.print(arr[i]+" ");
+        // }
+        int st=0;
+        int last=n-1;
+        while (st<last) {
+            int ele=arr[st];
+            arr[st]=arr[last];
+            arr[last]=ele;
+
+            st++;
+            last--;
+            
+        }
+        for(int i=0;i<n;i++){
             System.out.print(arr[i]+" ");
         }
 
