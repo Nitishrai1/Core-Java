@@ -6,7 +6,7 @@ public class code9 {
 
     // Rotated the array towards the right prosition
     public static void main(String[] args){
-         Scanner sc=new Scanner(System.in);
+        Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
         int temp[]=new int[n];
         for(int i=0;i<n;i++){
@@ -15,16 +15,22 @@ public class code9 {
         }
         System.out.println("Enter the no of element");
         int d=sc.nextInt();
-        int t=d;
+
         int temp2[]=new int[d];
-        for(int i=d;i<n;i++){
-            temp2[i]=temp[i];
-            
-            
+        for(int i=0;i<d;i++){
+            temp2[i]=temp[n-d+i];
         }
-        // shifting the array to right
-        for(int i=0;i<n-d;i--){
-            temp[n-d+i]=temp[i]
+
+        // shiftint the array element
+        for(int i=n-1;i>=d;i--){
+            temp[i]=temp[i-d];
+        }
+        for(int i=0;i<d;i++){
+            temp[i]=temp2[i];
+        }
+
+        for(int i=0;i<temp2.length;i++){
+            System.out.println(temp2[i]);
         }
     }
     
