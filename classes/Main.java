@@ -1,95 +1,89 @@
-package classes;
-import java.util.ArrayList;
+// class Account {
+//     String accountNumber;
+//     double balance;
+//     public Account(String accountNumber, double balance) {
+//         this.accountNumber = accountNumber;
+//         this.accountHolder = accountHolder;
+//         this.balance = balance;
+//     }
+//     public String getAccountNumber() {
+//         return accountNumber;
+//     }
+//     public String getAccountHolder() {
+//         return accountHolder;
+//     }
+//     public double getBalance() {
+//         return balance;
+//     }
+//     public void deposit(double amount) {
+//         if (amount > 0) {
+//             balance += amount;
+//             System.out.println("Deposited: " + amount);
+//             System.out.println("New Balance: " + balance);
+//         } else {
+//             System.out.println("Invalid deposit amount.");
+//         }
+//     }
+//     public void withdraw(double amount) {
+//         if (amount > 0 && amount <= balance) {
+//             balance -= amount;
+//             System.out.println("Withdrawn: " + amount);
+//             System.out.println("New Balance: " + balance);
+//         } else {
+//             System.out.println("Invalid withdrawal amount or insufficient funds.");
+//         }
+//     }
+// }
+// class Bank {
+//     Account[] accounts;
+//     int numAccounts;
 
-class Account {
-    private String accountNumber;
-    private String accountHolderName;
-    private double balance;
-
-    public Account(String accountNumber, String accountHolderName, double balance) {
-        this.accountNumber = accountNumber;
-        this.accountHolderName = accountHolderName;
-        this.balance = balance;
-    }
-
-    public String getAccountNumber() {
-        return accountNumber;
-    }
-
-    public String getAccountHolderName() {
-        return accountHolderName;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public void deposit(double amount) {
-        balance += amount;
-        System.out.println("Deposited " + amount + " into account " + accountNumber);
-    }
-
-    public void withdraw(double amount) {
-        if (balance >= amount) {
-            balance -= amount;
-            System.out.println("Withdrawn " + amount + " from account " + accountNumber);
-        } else {
-            System.out.println("Insufficient balance");
-        }
-    }
-}
-
-class Bank {
-    private ArrayList<Account> accounts;
-
-    public Bank() {
-        accounts = new ArrayList<>();
-    }
-
-    public void addAccount(Account account) {
-        accounts.add(account);
-        System.out.println("Account added: " + account.getAccountNumber());
-    }
-
-    public void removeAccount(Account account) {
-        accounts.remove(account);
-        System.out.println("Account removed: " + account.getAccountNumber());
-    }
-
-    public void deposit(String accountNumber, double amount) {
-        for (Account acc : accounts) {
-            if (acc.getAccountNumber().equals(accountNumber)) {
-                acc.deposit(amount);
-                return;
-            }
-        }
-        System.out.println("Account not found");
-    }
-
-    public void withdraw(String accountNumber, double amount) {
-        for (Account acc : accounts) {
-            if (acc.getAccountNumber().equals(accountNumber)) {
-                acc.withdraw(amount);
-                return;
-            }
-        }
-        System.out.println("Account not found");
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        // Creating a bank
-        Bank bank = new Bank();
-
-        // Adding accounts
-        Account acc1 = new Account("001", "John Doe", 1000);
-        Account acc2 = new Account("002", "Jane Smith", 2000);
-        bank.addAccount(acc1);
-        bank.addAccount(acc2);
-
-        // Depositing and withdrawing money
-        bank.deposit("001", 500);
-        bank.withdraw("002", 100);
-    }
-}
+//     public Bank(int num) {
+//         this.accounts = new Account[num];
+//         this.numAccounts = 0;
+//     }
+//     public void addAccount(Account account) {
+//         if (numAccounts < accounts.length) {
+//             accounts[numAccounts] = account;
+//             numAccounts++;
+//             System.out.println("Account added: " + account.getAccountNumber());
+//         } else {
+//             System.out.println("Bank is full. Cannot add more accounts.");
+//         }
+//     }
+//     public void removeAccount(String accountNumber) {
+//         for (int i = 0; i < numAccounts; i++) {
+//             if (accounts[i].getAccountNumber().equals(accountNumber)) {
+//                 accounts[i] = accounts[numAccounts - 1];
+//                 accounts[numAccounts - 1] = null;
+//                 numAccounts--;
+//                 System.out.println("Account removed: " + accountNumber);
+//                 return;
+//             }
+//         }
+//         System.out.println("Account not found with number: " + accountNumber);
+//     }
+//     public Account findAccount(String accountNumber) {
+//         for (int i = 0; i < numAccounts; i++) {
+//             if (accounts[i].getAccountNumber().equals(accountNumber)) {
+//                 return accounts[i];
+//             }
+//         }
+//         return null;
+//     }
+// }
+// public class Main {
+//     public static void main(String[] args) {
+//         Bank bank = new Bank(10);
+//         Account account1 = new Account("001", "John Doe", 1000.0);
+//         Account account2 = new Account("002", "Jane Doe", 1500.0);
+//         bank.addAccount(account1);
+//         bank.addAccount(account2);
+//         Account foundAccount = bank.findAccount("001");
+//         if (foundAccount != null) {
+//             foundAccount.deposit(500.0);
+//             foundAccount.withdraw(200.0);
+//         }
+//         bank.removeAccount("001");
+//     }
+// }
