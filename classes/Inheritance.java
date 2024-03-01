@@ -9,12 +9,27 @@ class Shape{
 
 class Triangle extends Shape{
     public void area(int l,int h){
-        Sytem.out.println(1/2*l*h);
+        System.out.println(1/2*l*h);
     }
 
 
 
 }
+
+// class Circle extends Shape{
+//     public void area(int r){
+//         System.out.println((3.14)*r*r);     //this is called herarical inheritance
+//     }
+// }
+
+class EqualiteralTriangle extends Triangle{    //multilevel inheritance
+    public void area(int l,int h){
+        System.out.println(1/2*l*h);
+    }
+}
+
+
+// Multiple inheritance in not possible in java by default but it can be achived with the help of interfaces
 
 public class Inheritance{
     public static void main(String args[]){
