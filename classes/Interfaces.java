@@ -26,7 +26,7 @@ class Cat implements Animal{
 
 public class Interfaces {
 
-    public static void main(){
+    public static void main(String[] args){
         Dog ob1=new Dog();
         Cat ob2=new Cat();
         ob1.eat();
