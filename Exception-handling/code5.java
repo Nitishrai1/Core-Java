@@ -5,11 +5,16 @@ public class code5 {
         try{
             int d=2;
             if(d<5){
-                throw new ArithmeticException("Less then 5");
+                throw new MyException("Less then 5");
             }
-        }catch(ArithmeticException e){
-            System.out.println(e.getMessage());
+        }catch(MyException e){
+            System.out.println(e);
         }
     }
     
+}
+class MyException extends Exception{
+    public MyException(String msg){
+        super(msg);
+    }
 }
