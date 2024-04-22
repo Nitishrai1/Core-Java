@@ -20,6 +20,10 @@ public class code2 {
         }catch(Exception e){
             System.out.println("Exception "+e);
         }
+        finally{
+            br.close(); //closing all the resourese in the finall block
+            System.out.println("Bye"); //this block is just like the defualt block it will run every time
+        }
 
     }
     
