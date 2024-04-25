@@ -3,6 +3,7 @@
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.FileWriter;
+import java.io.BufferedWriter;
 
 public class code3 {
     public static void main(String args[]) {
@@ -20,8 +21,14 @@ public class code3 {
         // }
 
         // FileReader
-        try(FileWriter fw=new FileWriter("input.txt")){
-            fw.write("Hello world");
+        // try(FileWriter fw=new FileWriter("input.txt",true)){  //true is written to append in the existing file by defualt the mode in write mode 
+        //     fw.write("Hello world");
+        // }catch(IOException e){
+        //     System.out.println(e.getMessage());
+        // }
+
+        try(BufferedWriter bw=new BufferedWriter(new FileWriter("input.txt"))){
+            bw.write("Hare krishna");
         }catch(IOException e){
             System.out.println(e.getMessage());
         }
