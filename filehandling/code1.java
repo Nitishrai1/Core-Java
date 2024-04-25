@@ -20,9 +20,13 @@ public class code1 {
 
 
         try(FileReader fr=new FileReader("input.txt")){
-            int letter=fr.read();
+            int letter=fr.read();  //read() returns the integer the ascii value we have to typescast it to the character
             while(fr.ready()){
                 System.out.println((char)letter);
+                int cnt=1;
+                // if((char)letter==" "){
+                //     System.out.println(cnt++);
+                // }
                 letter=fr.read();
             }
             System.out.println();
