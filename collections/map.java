@@ -19,6 +19,16 @@ public class map {
             System.out.println(e.getKey()+" "+e.getValue());
         }
 
+        for(Integer key:m1.keySet()){
+            System.out.println(key);
+        }
+
+        for(String val:m1.values()){
+            System.out.println(val);
+        }
+
+        m1.containsValue("Rohan");
+        m1.isEmpty();
 
     }
     
